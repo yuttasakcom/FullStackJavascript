@@ -10,7 +10,35 @@
 <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/react.png" width="124" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/es6.svg" width="114" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/webpack.svg" width="144" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/jest.png" width="124" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/nodejs_expressjs.png" width="300" />
 
 ## Table of Contents
+- [Install](#install)
+- [Development](#development)
+- [Testing](#testing)
+- [Production](#production)
 - [License](#license)
+
+## Install
+```
+$ git clone git@github.com:yuttasakcom/JSFullStack.git && cd JSFullStack && npm install
+```
+
+## Development
+```
+$ npm run dev
+```
+
+## Testing
+```
+$ npm run test
+
+or
+
+$ npm run cover
+```
+
+## Production
+```
+docker-compose up -d --build
+```
 
 ## License
 The MIT License
