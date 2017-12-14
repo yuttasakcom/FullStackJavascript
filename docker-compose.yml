@@ -17,6 +17,7 @@ services:
     image: yuttasakcom/nodees6:1.0.0
     container_name: nodees6
     environment:
+      - NODE_ENV=production
       - HOST=nodees6
     networks:
       - proxy

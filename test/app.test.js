@@ -1,11 +1,11 @@
 import request from 'supertest'
 
-import app from '../src/app'
+import app from '../server/app'
 
-describe('GET /', () => {
+describe('GET /api', () => {
   it('should return Welcome to NODE ES6 response', done => {
     request(app)
-      .get('/')
+      .get('/api')
       .expect('Welcome to NODE ES6')
       .end(done)
   })

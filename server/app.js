@@ -13,6 +13,7 @@ const app = express()
 // Express configuration.
 app.set('host', process.env.HOST || 'localhost')
 app.set('port', process.env.PORT || 3000)
+app.use(express.static('public'))
 
 // Routes.
 routes(app)
