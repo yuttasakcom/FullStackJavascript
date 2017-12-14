@@ -1,6 +1,14 @@
-# NODE ES6
+# JS Full Stack
 [![Build Status](https://travis-ci.org/yuttasakcom/JSFullStack.svg?branch=master)](https://travis-ci.org/yuttasakcom/JSFullStack)
-[![Coverage Status](https://coveralls.io/repos/github/yuttasakcom/JSFullStack/badge.svg?branch=master)](https://coveralls.io/github/yuttasakcom/JSFullStack?branch=master)
+[![Coverage Status](https://img.shields.io/coveralls/github/yuttasakcom/JSFullStack/master.svg)](https://coveralls.io/github/yuttasakcom/JSFullStack?branch=master)
+[![GitHub issues](https://img.shields.io/github/issues/yuttasakcom/JSFullStack.svg)](https://github.com/yuttasakcom/JSFullStack/issues)
+[![GitHub forks](https://img.shields.io/github/forks/yuttasakcom/JSFullStack.svg)](https://github.com/yuttasakcom/JSFullStack/network)
+[![GitHub stars](https://img.shields.io/github/stars/yuttasakcom/JSFullStack.svg)](https://github.com/yuttasakcom/JSFullStack/stargazers)
+[![GitHub license](https://img.shields.io/github/license/yuttasakcom/JSFullStack.svg)](https://github.com/yuttasakcom/JSFullStack/blob/master/LICENSE)
+
+## Stack
+<img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/nodejs.svg" />
+<img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/react.png" />
 
 ## Table of Contents
 
