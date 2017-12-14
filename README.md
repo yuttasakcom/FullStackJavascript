@@ -7,8 +7,8 @@
 [![GitHub license](https://img.shields.io/github/license/yuttasakcom/JSFullStack.svg)](https://github.com/yuttasakcom/JSFullStack/blob/master/LICENSE)
 
 ## Stack
-<img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/nodejs.svg" />
-<img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/react.png" />
+<img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/nodejs.svg" width="128" />
+<img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/react.png" width="128" />
 
 ## Table of Contents
 
