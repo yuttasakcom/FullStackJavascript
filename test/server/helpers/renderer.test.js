@@ -7,6 +7,10 @@ const store = createStore(reducers, {})
 
 describe('Helpers Renderer', () => {
   it('should return response', () => {
+
+    renderer.__Rewire__('renderToString', () => '<div data-reactroot=""></div>')
+    renderer.__Rewire__('serialize', () => '{}')
+
     expect(renderer({path: '/'}, store)).toBe(`<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -17,9 +21,9 @@ describe('Helpers Renderer', () => {
       <link rel=icon type=image/png href=/statics/img/favicon.png>
     </head>
     <body>
-      <div id="root"><div data-reactroot=""><div>Header</div><div>Home Page</div></div></div>
+      <div id="root"><div data-reactroot=""></div></div>
       <script>
-        window.INITIAL_STATE = {"users":[]}
+        window.INITIAL_STATE = {}
       </script>
       <script src="bundle.js"></script>
     </body>
