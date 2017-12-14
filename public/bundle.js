@@ -6982,7 +6982,7 @@ var _routes2 = _interopRequireDefault(_routes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _redux.createStore)(_reducers2.default, {}, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+var store = (0, _redux.createStore)(_reducers2.default, window.INITIAL_STATE, (0, _redux.applyMiddleware)(_reduxThunk2.default));
 
 _reactDom2.default.hydrate(_react2.default.createElement(
   _reactRedux.Provider,
@@ -31916,7 +31916,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var FETCH_USERS = exports.FETCH_USERS = 'fetch_users';
-var fetch_users = exports.fetch_users = function fetch_users() {
+var fetchUsers = exports.fetchUsers = function fetchUsers() {
   return function (dispatch) {
     var res = { data: [{ name: 'yo' }] };
     dispatch({
@@ -34553,6 +34553,10 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(407);
+
+var _actions = __webpack_require__(419);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34574,7 +34578,7 @@ var HomePage = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        _react.Fragment,
+        'div',
         null,
         'Home Page'
       );
@@ -34584,8 +34588,18 @@ var HomePage = function (_Component) {
   return HomePage;
 }(_react.Component);
 
+var loadData = function loadData(store) {
+  return store.dispatch((0, _actions.fetchUsers)());
+};
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var users = _ref.users;
+  return { users: users };
+};
+
 exports.default = {
-  component: HomePage
+  loadData: loadData,
+  component: (0, _reactRedux.connect)(mapStateToProps)(HomePage)
 };
 
 /***/ }),

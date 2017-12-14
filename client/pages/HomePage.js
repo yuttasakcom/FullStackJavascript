@@ -1,11 +1,18 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchUsers } from '../../client/actions'
 
 class HomePage extends Component {
   render() {
-    return <Fragment>Home Page</Fragment>
+    return <div>Home Page</div>
   }
 }
 
+const loadData = store => store.dispatch(fetchUsers())
+
+const mapStateToProps = ({ users }) => ({ users })
+
 export default {
-  component: HomePage
+  loadData,
+  component: connect(mapStateToProps)(HomePage)
 }

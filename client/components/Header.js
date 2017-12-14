@@ -1,4 +1,4 @@
-import React, { Fragement } from 'react'
+import React from 'react'
 
 const Header = () => <div>Header</div>
 

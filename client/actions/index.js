@@ -1,5 +1,5 @@
 export const FETCH_USERS = 'fetch_users'
-export const fetch_users = () => dispatch => {
+export const fetchUsers = () => dispatch => {
   const res = { data: [{ name: 'yo' }] }
   dispatch({
     type: FETCH_USERS,

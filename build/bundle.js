@@ -219,7 +219,15 @@ var router = function router(app) {
   app.get('*', function (req, res) {
     var store = (0, _createStore2.default)(req);
 
-    res.send((0, _renderer2.default)(req, store));
+    var promises = (0, _reactRouterConfig.matchRoutes)(_routes2.default, req.path).map(function (_ref) {
+      var route = _ref.route;
+
+      return route.loadData ? route.loadData(store) : null;
+    });
+
+    Promise.all(promises).then(function () {
+      res.send((0, _renderer2.default)(req, store));
+    });
   });
 };
 
@@ -317,6 +325,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(12);
+
+var _actions = __webpack_require__(21);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -338,7 +350,7 @@ var HomePage = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        _react.Fragment,
+        'div',
         null,
         'Home Page'
       );
@@ -348,8 +360,18 @@ var HomePage = function (_Component) {
   return HomePage;
 }(_react.Component);
 
+var loadData = function loadData(store) {
+  return store.dispatch((0, _actions.fetchUsers)());
+};
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var users = _ref.users;
+  return { users: users };
+};
+
 exports.default = {
-  component: HomePage
+  loadData: loadData,
+  component: (0, _reactRedux.connect)(mapStateToProps)(HomePage)
 };
 
 /***/ }),
@@ -439,7 +461,7 @@ var _reducers2 = _interopRequireDefault(_reducers);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function (req) {
+exports.default = function () {
   var store = (0, _redux.createStore)(_reducers2.default, {}, (0, _redux.applyMiddleware)(_reduxThunk2.default));
 
   return store;
@@ -510,7 +532,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var FETCH_USERS = exports.FETCH_USERS = 'fetch_users';
-var fetch_users = exports.fetch_users = function fetch_users() {
+var fetchUsers = exports.fetchUsers = function fetchUsers() {
   return function (dispatch) {
     var res = { data: [{ name: 'yo' }] };
     dispatch({
