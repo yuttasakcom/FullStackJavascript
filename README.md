@@ -7,9 +7,10 @@
 [![GitHub license](https://img.shields.io/github/license/yuttasakcom/JSFullStack.svg)](https://github.com/yuttasakcom/JSFullStack/blob/master/LICENSE)
 
 ## Stack
+<img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/react.png" width="124" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/es6.svg" width="114" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/webpack.svg" width="144" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/jest.png" width="124" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/nodejs_expressjs.png" width="300" />
 
 ## Table of Contents
-<img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/react.png" width="124" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/es6.svg" width="114" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/webpack.svg" width="144" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/jest.png" width="124" /> <img src="https://github.com/yuttasakcom/JSFullStack/blob/master/statics/img/nodejs_expressjs.png" width="300" />
+- [License](#license)
 
 ## License
 The MIT License
