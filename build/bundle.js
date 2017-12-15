@@ -73,13 +73,13 @@ module.exports = require("react");
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-config");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("react-router-config");
 
 /***/ }),
 /* 3 */
@@ -112,7 +112,7 @@ var _LoginPage = __webpack_require__(16);
 
 var _LoginPage2 = _interopRequireDefault(_LoginPage);
 
-var _SignupPage = __webpack_require__(24);
+var _SignupPage = __webpack_require__(17);
 
 var _SignupPage2 = _interopRequireDefault(_SignupPage);
 
@@ -248,7 +248,7 @@ var _createStore = __webpack_require__(20);
 
 var _createStore2 = _interopRequireDefault(_createStore);
 
-var _reactRouterConfig = __webpack_require__(1);
+var _reactRouterConfig = __webpack_require__(2);
 
 var _routes = __webpack_require__(4);
 
@@ -295,11 +295,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _server = __webpack_require__(13);
 
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(1);
 
 var _reactRedux = __webpack_require__(3);
 
-var _reactRouterConfig = __webpack_require__(1);
+var _reactRouterConfig = __webpack_require__(2);
 
 var _serializeJavascript = __webpack_require__(14);
 
@@ -360,7 +360,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(3);
 
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(1);
 
 var _actions = __webpack_require__(5);
 
@@ -420,20 +420,20 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var LoginPage = function LoginPage() {
   return _react2.default.createElement(
     'div',
-    { className: 'container mt-sm-10 mt-md-20' },
+    { className: 'container' },
     _react2.default.createElement(
       'div',
       { className: 'row' },
       _react2.default.createElement(
         'div',
-        { className: 'col-md-6 col-lg-4' },
+        { className: 'col-md-6 col-lg-4 mt-sm-10 mt-md-10 mt-lg-20' },
         _react2.default.createElement(
           'div',
           { className: 'loginContainer' },
@@ -495,6 +495,43 @@ var LoginPage = function LoginPage() {
             )
           )
         )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'col-md-6 col-lg-8 mt-5 mt-md-10 mt-lg-15 pl-lg-10' },
+        _react2.default.createElement(
+          'div',
+          { className: 'loginText' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'Get great music, right now'
+          ),
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Listen to loads of songs for free'
+          ),
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(
+              'li',
+              null,
+              'Discover music you\'ll fall in love with'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'Create your own playlists'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'Follow artists to keep to date'
+            )
+          )
+        )
       )
     )
   );
@@ -505,8 +542,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 17 */,
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -520,206 +556,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterConfig = __webpack_require__(1);
-
-var _Header = __webpack_require__(19);
-
-var _Header2 = _interopRequireDefault(_Header);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var App = function App(_ref) {
-  var route = _ref.route;
-  return _react2.default.createElement(
-    'div',
-    { className: 'background', id: 'app' },
-    _react2.default.createElement(_Header2.default, null),
-    (0, _reactRouterConfig.renderRoutes)(route.routes)
-  );
-};
-
-exports.default = {
-  component: App
-};
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Header = function Header() {
-  return _react2.default.createElement(
-    'header',
-    null,
-    _react2.default.createElement(
-      'nav',
-      { className: 'navbar navbar-expand-lg navbar-inverse bg-inverse' },
-      _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { className: 'navbar-brand inline', to: '/' },
-          _react2.default.createElement(
-            'div',
-            { className: 'd-flex' },
-            _react2.default.createElement(
-              'div',
-              { className: 'bg-warning px-2 text-dark rounded-left' },
-              'JS'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'bg-light px-2 text-dark rounded-right' },
-              'Full Stack'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'button',
-          {
-            className: 'navbar-toggler',
-            type: 'button',
-            'data-toggle': 'collapse',
-            'data-target': '#navbarSupportedContent',
-            'aria-controls': 'navbarSupportedContent',
-            'aria-expanded': 'false',
-            'aria-label': 'Toggle navigation'
-          },
-          _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
-        ),
-        _react2.default.createElement(
-          'div',
-          {
-            className: 'collapse navbar-collapse justify-content-end',
-            id: 'navbarSupportedContent'
-          },
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/signup', className: 'btn btn-warning' },
-            'Sign Up'
-          )
-        )
-      )
-    )
-  );
-};
-
-exports.default = Header;
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _redux = __webpack_require__(6);
-
-var _reduxThunk = __webpack_require__(21);
-
-var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
-
-var _reducers = __webpack_require__(22);
-
-var _reducers2 = _interopRequireDefault(_reducers);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function () {
-  var store = (0, _redux.createStore)(_reducers2.default, {}, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-
-  return store;
-};
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux-thunk");
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _redux = __webpack_require__(6);
-
-var _userReducer = __webpack_require__(23);
-
-var _userReducer2 = _interopRequireDefault(_userReducer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = (0, _redux.combineReducers)({
-  users: _userReducer2.default
-});
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _actions = __webpack_require__(5);
-
-exports.default = function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var action = arguments[1];
-
-  switch (action.type) {
-    case _actions.FETCH_USERS:
-      return action.payload.data;
-    default:
-      return state;
-  }
-};
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -876,6 +713,205 @@ var SignupPage = function SignupPage() {
 
 exports.default = {
   component: SignupPage
+};
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterConfig = __webpack_require__(2);
+
+var _Header = __webpack_require__(19);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var App = function App(_ref) {
+  var route = _ref.route;
+  return _react2.default.createElement(
+    'div',
+    { className: 'background', id: 'app' },
+    _react2.default.createElement(_Header2.default, null),
+    (0, _reactRouterConfig.renderRoutes)(route.routes)
+  );
+};
+
+exports.default = {
+  component: App
+};
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Header = function Header() {
+  return _react2.default.createElement(
+    'header',
+    null,
+    _react2.default.createElement(
+      'nav',
+      { className: 'navbar navbar-expand-lg navbar-inverse bg-inverse' },
+      _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { className: 'navbar-brand inline', to: '/' },
+          _react2.default.createElement(
+            'div',
+            { className: 'd-flex' },
+            _react2.default.createElement(
+              'div',
+              { className: 'bg-warning px-2 text-dark rounded-left' },
+              'JS'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'bg-light px-2 text-dark rounded-right' },
+              'Full Stack'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'button',
+          {
+            className: 'navbar-toggler',
+            type: 'button',
+            'data-toggle': 'collapse',
+            'data-target': '#navbarSupportedContent',
+            'aria-controls': 'navbarSupportedContent',
+            'aria-expanded': 'false',
+            'aria-label': 'Toggle navigation'
+          },
+          _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
+        ),
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'collapse navbar-collapse justify-content-end',
+            id: 'navbarSupportedContent'
+          },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/signup', className: 'btn btn-warning' },
+            'Sign Up'
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = Header;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _redux = __webpack_require__(6);
+
+var _reduxThunk = __webpack_require__(21);
+
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+var _reducers = __webpack_require__(22);
+
+var _reducers2 = _interopRequireDefault(_reducers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+  var store = (0, _redux.createStore)(_reducers2.default, {}, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+
+  return store;
+};
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-thunk");
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _redux = __webpack_require__(6);
+
+var _userReducer = __webpack_require__(23);
+
+var _userReducer2 = _interopRequireDefault(_userReducer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _redux.combineReducers)({
+  users: _userReducer2.default
+});
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _actions = __webpack_require__(5);
+
+exports.default = function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+
+  switch (action.type) {
+    case _actions.FETCH_USERS:
+      return action.payload.data;
+    default:
+      return state;
+  }
 };
 
 /***/ })

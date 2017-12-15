@@ -5906,8 +5906,14 @@ button:disabled {
     margin-top: 12rem !important; }
   .mt-lg-10 {
     margin-top: 6rem !important; }
+  .mt-lg-15 {
+    margin-top: 9.5rem !important; }
   .mt-lg-20 {
-    margin-top: 12rem !important; } }
+    margin-top: 12rem !important; }
+  .pl-lg-10 {
+    padding-left: 6rem !important; }
+  .pl-lg-15 {
+    padding-left: 9.5rem !important; } }
 
 .loginContainer * {
   color: #fff;
@@ -5937,6 +5943,22 @@ button:disabled {
     color: #fff; }
   .loginContainer * a:active {
     color: #fff; }
+
+.loginText {
+  color: #fff; }
+  .loginText h1 {
+    color: #07d159;
+    font-size: 60px;
+    font-weight: bold; }
+  .loginText h2 {
+    margin: 35px 0; }
+  .loginText ul {
+    padding: 0px; }
+    .loginText ul li {
+      padding: 5px 30px;
+      font-size: 20px;
+      list-style-type: none;
+      background: url("/statics/img/icons/checkmark.png") no-repeat 0 0; }
 
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
