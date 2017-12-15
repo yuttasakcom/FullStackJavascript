@@ -7,7 +7,7 @@
 
     label {
         color: #a0a0a0;
-        font-size: 13px;
+        font-size: 15px;
         margin-top: 15px;
     }
 
@@ -45,7 +45,7 @@
     color: #fff;
     h1 {
         color: #07d159;
-        font-size: 60px;
+        font-size: 70px;
         font-weight: bold;
     }
 
@@ -57,10 +57,10 @@
         padding: 0px;
         
         li {
-            padding: 5px 30px;
+            padding: 5px 35px;
             font-size: 20px;
             list-style-type: none;
-            background: url("/statics/img/icons/checkmark.png") no-repeat 0 0;
+            background: url("/statics/img/icons/checkmark.png") no-repeat 0 5px;
         }
     }
 }

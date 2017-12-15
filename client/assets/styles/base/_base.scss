@@ -5,15 +5,11 @@ body {
   height: 100%;
 }
 
-button {
-  cursor: pointer;
+header {
+  margin-bottom: -56px;
 }
 
-button:disabled {
-  cursor: default;
-}
-
-#app {
+#background {
   height: 100vh;
 }
 
@@ -25,6 +21,15 @@ button:disabled {
   display: table;
   height: 100%;
   width: 100%;
+  bottom: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
 }
 
 .transparent {
@@ -32,6 +37,13 @@ button:disabled {
 }
 
 // sm
+
+@media (min-width: 0px) {
+  .mt-10 {
+    margin-top: 6rem !important;
+  }
+}
+
 @media (max-width: 576px) {
   .mt-sm-10 {
     margin-top: 6rem !important;

@@ -1,0 +1,125 @@
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+}
+
+.playingContainer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    min-width: 620px;
+}
+
+.playing {
+    height: 90px;
+    padding: 16px;
+    box-sizing: border-box;
+
+    .content {
+        width: 100%;
+        height: 57px;
+    }
+}
+
+.playing-left,
+.playing-right {
+    width: 30%;
+    min-width: 180px;
+}
+
+.playing-right {
+    position: relative;
+    margin-top: 16px;
+}
+
+.playing-center {
+    width: 40%;
+    max-width: 700px;
+}
+
+.playerControls .buttons {
+    margin: 0 auto;
+    display: table;
+}
+
+.controlButton {
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.controlButton.play img,
+.controlButton.play img {
+    width: 32px;
+    height: 32px;
+}
+
+.progressTime {
+    color: #a0a0a0;
+    font-size: 11px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.progressBar {
+    width: 100%;
+    height: 12px;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.progressBarBg {
+    background-color: #404040;
+    height: 4px;
+    width:100%;
+    border-radius: 2px;
+}
+
+.prog {
+    background-color: #a0a0a0;
+    height: 4px;
+    width: 10%;
+    border-radius: 2px;
+}
+
+.playbackBar .progressBar {
+    margin-top: 6px;
+}
+
+.albumArtwork {
+    height: 100%;
+    max-width: 57px;
+    margin-right: 15px;
+    float: left;
+    background-size: cover;
+}
+
+.playing-left .trackInfo {
+    display: table;
+}
+
+.playing-left .trackInfo .trackName {
+    margin-top: 6px;
+    display: inline-block;
+    width: 100%;
+}
+
+.playing-left .trackInfo .artistName span {
+    font-size: 12px;
+    color: #a0a0a0;
+}
+
+.volumeBar {
+    width: 180px;
+    position: absolute;
+    right: 0;
+
+    .progressBar {
+        width: 125px;
+    }
+}

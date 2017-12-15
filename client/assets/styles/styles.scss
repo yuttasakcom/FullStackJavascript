@@ -3,8 +3,10 @@
 @import './base/base';
 
 // Pages
+@import './pages/main';
 @import './pages/login';
 @import './pages/signup';
 
 // Components
 @import './components/header';
+@import './components/playing_bar';

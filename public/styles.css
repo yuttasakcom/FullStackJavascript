@@ -5870,13 +5870,10 @@ body {
   margin: 0;
   height: 100%; }
 
-button {
-  cursor: pointer; }
+header {
+  margin-bottom: -56px; }
 
-button:disabled {
-  cursor: default; }
-
-#app {
+#background {
   height: 100vh; }
 
 .background {
@@ -5886,10 +5883,21 @@ button:disabled {
   background-size: cover;
   display: table;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  bottom: 0; }
+
+button {
+  cursor: pointer; }
+
+button:disabled {
+  cursor: default; }
 
 .transparent {
   background-color: transparent; }
+
+@media (min-width: 0px) {
+  .mt-10 {
+    margin-top: 6rem !important; } }
 
 @media (max-width: 576px) {
   .mt-sm-10 {
@@ -5915,6 +5923,24 @@ button:disabled {
   .pl-lg-15 {
     padding-left: 9.5rem !important; } }
 
+.topContainer {
+  min-height: 100%;
+  height: 100%; }
+
+.navBarContainer {
+  background-color: #000;
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.navBar {
+  padding: 25px; }
+
+.logo img {
+  width: 32px; }
+
 .loginContainer * {
   color: #fff;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -5923,7 +5949,7 @@ button:disabled {
   box-sizing: border-box; }
   .loginContainer * label {
     color: #a0a0a0;
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 15px; }
   .loginContainer * input {
     display: block;
@@ -5948,17 +5974,17 @@ button:disabled {
   color: #fff; }
   .loginText h1 {
     color: #07d159;
-    font-size: 60px;
+    font-size: 70px;
     font-weight: bold; }
   .loginText h2 {
     margin: 35px 0; }
   .loginText ul {
     padding: 0px; }
     .loginText ul li {
-      padding: 5px 30px;
+      padding: 5px 35px;
       font-size: 20px;
       list-style-type: none;
-      background: url("/statics/img/icons/checkmark.png") no-repeat 0 0; }
+      background: url("/statics/img/icons/checkmark.png") no-repeat 0 5px; }
 
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
@@ -5994,7 +6020,7 @@ button:disabled {
   box-sizing: border-box; }
   .signupContainer * label {
     color: #a0a0a0;
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 15px; }
   .signupContainer * input {
     display: block;
@@ -6040,5 +6066,106 @@ button:disabled {
 ::placeholder {
   /* Most modern browsers support this now. */
   color: #fff; }
+
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff; }
+
+.playingContainer {
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  min-width: 620px; }
+
+.playing {
+  height: 90px;
+  padding: 16px;
+  box-sizing: border-box; }
+  .playing .content {
+    width: 100%;
+    height: 57px; }
+
+.playing-left,
+.playing-right {
+  width: 30%;
+  min-width: 180px; }
+
+.playing-right {
+  position: relative;
+  margin-top: 16px; }
+
+.playing-center {
+  width: 40%;
+  max-width: 700px; }
+
+.playerControls .buttons {
+  margin: 0 auto;
+  display: table; }
+
+.controlButton {
+  background-color: transparent;
+  border: none;
+  vertical-align: middle; }
+  .controlButton img {
+    width: 20px;
+    height: 20px; }
+
+.controlButton.play img,
+.controlButton.play img {
+  width: 32px;
+  height: 32px; }
+
+.progressTime {
+  color: #a0a0a0;
+  font-size: 11px;
+  min-width: 40px;
+  text-align: center; }
+
+.progressBar {
+  width: 100%;
+  height: 12px;
+  display: inline-flex;
+  cursor: pointer; }
+
+.progressBarBg {
+  background-color: #404040;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px; }
+
+.prog {
+  background-color: #a0a0a0;
+  height: 4px;
+  width: 10%;
+  border-radius: 2px; }
+
+.playbackBar .progressBar {
+  margin-top: 6px; }
+
+.albumArtwork {
+  height: 100%;
+  max-width: 57px;
+  margin-right: 15px;
+  float: left;
+  background-size: cover; }
+
+.playing-left .trackInfo {
+  display: table; }
+
+.playing-left .trackInfo .trackName {
+  margin-top: 6px;
+  display: inline-block;
+  width: 100%; }
+
+.playing-left .trackInfo .artistName span {
+  font-size: 12px;
+  color: #a0a0a0; }
+
+.volumeBar {
+  width: 180px;
+  position: absolute;
+  right: 0; }
+  .volumeBar .progressBar {
+    width: 125px; }
 
 /*# sourceMappingURL=styles.css.map*/
