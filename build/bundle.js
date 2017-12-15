@@ -308,7 +308,7 @@ exports.default = function (req, store) {
     )
   ));
 
-  return '<!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <meta charset="UTF-8">\n      <meta name="viewport" content="width=device-width, initial-scale=1.0">\n      <meta http-equiv="X-UA-Compatible" content="ie=edge">\n      <title>JS Full Stack</title>\n      <link rel=icon type=image/png href=/statics/img/favicon.png>\n    </head>\n    <body>\n      <div id="root">' + content + '</div>\n      <script>\n        window.INITIAL_STATE = ' + (0, _serializeJavascript2.default)(store.getState()) + '\n      </script>\n      <script src="bundle.js"></script>\n    </body>\n    </html>';
+  return '<!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <meta charset="UTF-8">\n      <meta name="viewport" content="width=device-width, initial-scale=1.0">\n      <meta http-equiv="X-UA-Compatible" content="ie=edge">\n      <title>JS Full Stack</title>\n      <link rel=icon type=image/png href=/statics/img/favicon.png>\n      <link rel="stylesheet" href="/styles.css">\n    </head>\n    <body>\n      <div id="root">' + content + '</div>\n      <script>\n        window.INITIAL_STATE = ' + (0, _serializeJavascript2.default)(store.getState()) + '\n      </script>\n      <script src="bundle.js"></script>\n    </body>\n    </html>';
 };
 
 /***/ }),
@@ -372,7 +372,7 @@ var HomePage = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'container' },
         'Home Page'
       );
     }
@@ -447,13 +447,54 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(13);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header() {
   return _react2.default.createElement(
-    'div',
+    'header',
     null,
-    'Header'
+    _react2.default.createElement(
+      'nav',
+      { className: 'navbar navbar-expand-lg navbar-dark bg-dark' },
+      _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { className: 'navbar-brand inline', to: '/' },
+          _react2.default.createElement(
+            'div',
+            { className: 'd-flex' },
+            _react2.default.createElement(
+              'div',
+              { className: 'bg-warning px-2 text-dark rounded-left' },
+              'JS'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'bg-light px-2 text-dark rounded-right' },
+              'Full Stack'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'button',
+          {
+            className: 'navbar-toggler',
+            type: 'button',
+            'data-toggle': 'collapse',
+            'data-target': '#navbarSupportedContent',
+            'aria-controls': 'navbarSupportedContent',
+            'aria-expanded': 'false',
+            'aria-label': 'Toggle navigation'
+          },
+          _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
+        ),
+        _react2.default.createElement('div', { className: 'collapse navbar-collapse', id: 'navbarSupportedContent' })
+      )
+    )
   );
 };
 

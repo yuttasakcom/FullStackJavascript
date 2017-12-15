@@ -7,11 +7,10 @@ const store = createStore(reducers, {})
 
 describe('Helpers Renderer', () => {
   it('should return response', () => {
-
     renderer.__Rewire__('renderToString', () => '<div data-reactroot=""></div>')
     renderer.__Rewire__('serialize', () => '{}')
 
-    expect(renderer({path: '/'}, store)).toBe(`<!DOCTYPE html>
+    expect(renderer({ path: '/' }, store)).toBe(`<!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
@@ -19,6 +18,7 @@ describe('Helpers Renderer', () => {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>JS Full Stack</title>
       <link rel=icon type=image/png href=/statics/img/favicon.png>
+      <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
       <div id="root"><div data-reactroot=""></div></div>

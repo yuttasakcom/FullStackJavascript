@@ -24,6 +24,7 @@ export default (req, store) => {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>JS Full Stack</title>
       <link rel=icon type=image/png href=/statics/img/favicon.png>
+      <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
       <div id="root">${content}</div>

@@ -11,6 +11,9 @@ import reducers from './reducers'
 import { BrowserRouter } from 'react-router-dom'
 import Routes from './routes'
 
+import 'bootstrap/scss/bootstrap.scss'
+import './assets/styles/styles.scss'
+
 const store = createStore(
   reducers,
   window.INITIAL_STATE,

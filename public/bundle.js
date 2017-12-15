@@ -7020,6 +7020,10 @@ var _routes = __webpack_require__(444);
 
 var _routes2 = _interopRequireDefault(_routes);
 
+__webpack_require__(448);
+
+__webpack_require__(450);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var store = (0, _redux.createStore)(_reducers2.default, window.INITIAL_STATE, (0, _redux.applyMiddleware)(_reduxThunk2.default));
@@ -34579,7 +34583,7 @@ var HomePage = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'container' },
         'Home Page'
       );
     }
@@ -34654,17 +34658,71 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(420);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header() {
   return _react2.default.createElement(
-    'div',
+    'header',
     null,
-    'Header'
+    _react2.default.createElement(
+      'nav',
+      { className: 'navbar navbar-expand-lg navbar-dark bg-dark' },
+      _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { className: 'navbar-brand inline', to: '/' },
+          _react2.default.createElement(
+            'div',
+            { className: 'd-flex' },
+            _react2.default.createElement(
+              'div',
+              { className: 'bg-warning px-2 text-dark rounded-left' },
+              'JS'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'bg-light px-2 text-dark rounded-right' },
+              'Full Stack'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'button',
+          {
+            className: 'navbar-toggler',
+            type: 'button',
+            'data-toggle': 'collapse',
+            'data-target': '#navbarSupportedContent',
+            'aria-controls': 'navbarSupportedContent',
+            'aria-expanded': 'false',
+            'aria-label': 'Toggle navigation'
+          },
+          _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
+        ),
+        _react2.default.createElement('div', { className: 'collapse navbar-collapse', id: 'navbarSupportedContent' })
+      )
+    )
   );
 };
 
 exports.default = Header;
+
+/***/ }),
+/* 448 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 449 */,
+/* 450 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

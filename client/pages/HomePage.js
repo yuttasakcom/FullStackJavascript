@@ -4,7 +4,7 @@ import { fetchUsers } from '../../client/actions'
 
 class HomePage extends Component {
   render() {
-    return <div>Home Page</div>
+    return <div className="container">Home Page</div>
   }
 }
 
