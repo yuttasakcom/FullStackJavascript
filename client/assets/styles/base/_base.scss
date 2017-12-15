@@ -1,7 +1,68 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
 button {
   cursor: pointer;
 }
 
 button:disabled {
   cursor: default;
+}
+
+#app {
+  height: 100vh;
+}
+
+.background {
+  background-color: #000;
+  background-image: url("/statics/img/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+// sm
+@media (max-width: 576px) {
+  .mt-sm-10 {
+    margin-top: 6rem !important;
+  }
+}
+
+// md
+@media (min-width: 577px) and (max-width: 991px) {
+  .mt-md-10 {
+    margin-top: 6rem !important;
+  }
+
+  .mt-md-20 {
+    margin-top: 12rem !important;
+  }
+}
+
+// lg
+@media (min-width: 992px) {
+
+  // size md
+  .mt-md-20 {
+    margin-top: 12rem !important;
+  }
+  
+  // size lg
+  .mt-lg-10 {
+    margin-top: 6rem !important;
+  }
+
+  .mt-lg-20 {
+    margin-top: 12rem !important;
+  }
 }

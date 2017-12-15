@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -79,10 +79,16 @@ module.exports = require("react-router-config");
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -102,20 +108,32 @@ var _HomePage = __webpack_require__(15);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _App = __webpack_require__(16);
+var _LoginPage = __webpack_require__(16);
+
+var _LoginPage2 = _interopRequireDefault(_LoginPage);
+
+var _SignupPage = __webpack_require__(24);
+
+var _SignupPage2 = _interopRequireDefault(_SignupPage);
+
+var _App = __webpack_require__(18);
 
 var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = [_extends({}, _App2.default, {
-  routes: [_extends({}, _HomePage2.default, {
+  routes: [_extends({}, _LoginPage2.default, {
+    path: '/login'
+  }), _extends({}, _SignupPage2.default, {
+    path: '/signup'
+  }), _extends({}, _HomePage2.default, {
     path: '/'
   })]
 })];
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -136,13 +154,13 @@ var fetchUsers = exports.fetchUsers = function fetchUsers() {
 };
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -152,17 +170,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-__webpack_require__(7);
+__webpack_require__(8);
 
-var _express = __webpack_require__(8);
+var _express = __webpack_require__(9);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _dotenv = __webpack_require__(9);
+var _dotenv = __webpack_require__(10);
 
 var _dotenv2 = _interopRequireDefault(_dotenv);
 
-var _routes = __webpack_require__(10);
+var _routes = __webpack_require__(11);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -194,25 +212,25 @@ app.listen(app.get('port'), app.get('host'), function () {
 exports.default = app;
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-polyfill");
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = require("dotenv");
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -222,17 +240,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _renderer = __webpack_require__(11);
+var _renderer = __webpack_require__(12);
 
 var _renderer2 = _interopRequireDefault(_renderer);
 
-var _createStore = __webpack_require__(18);
+var _createStore = __webpack_require__(20);
 
 var _createStore2 = _interopRequireDefault(_createStore);
 
 var _reactRouterConfig = __webpack_require__(1);
 
-var _routes = __webpack_require__(3);
+var _routes = __webpack_require__(4);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -261,7 +279,7 @@ var router = function router(app) {
 exports.default = router;
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -275,11 +293,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(12);
+var _server = __webpack_require__(13);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterDom = __webpack_require__(2);
 
-var _reactRedux = __webpack_require__(2);
+var _reactRedux = __webpack_require__(3);
 
 var _reactRouterConfig = __webpack_require__(1);
 
@@ -287,7 +305,7 @@ var _serializeJavascript = __webpack_require__(14);
 
 var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
 
-var _routes = __webpack_require__(3);
+var _routes = __webpack_require__(4);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -312,16 +330,10 @@ exports.default = function (req, store) {
 };
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-dom/server");
-
-/***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 14 */
@@ -346,9 +358,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(2);
+var _reactRedux = __webpack_require__(3);
 
-var _actions = __webpack_require__(4);
+var _reactRouterDom = __webpack_require__(2);
+
+var _actions = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -370,11 +384,7 @@ var HomePage = function (_Component) {
   _createClass(HomePage, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        'Home Page'
-      );
+      return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/login' });
     }
   }]);
 
@@ -410,30 +420,93 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterConfig = __webpack_require__(1);
-
-var _Header = __webpack_require__(17);
-
-var _Header2 = _interopRequireDefault(_Header);
+var _reactRouterDom = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var App = function App(_ref) {
-  var route = _ref.route;
+var LoginPage = function LoginPage() {
   return _react2.default.createElement(
-    _react.Fragment,
-    null,
-    _react2.default.createElement(_Header2.default, null),
-    (0, _reactRouterConfig.renderRoutes)(route.routes)
+    'div',
+    { className: 'container mt-sm-10 mt-md-20' },
+    _react2.default.createElement(
+      'div',
+      { className: 'row' },
+      _react2.default.createElement(
+        'div',
+        { className: 'col-md-6 col-lg-4' },
+        _react2.default.createElement(
+          'div',
+          { className: 'loginContainer' },
+          _react2.default.createElement(
+            'form',
+            null,
+            _react2.default.createElement(
+              'h2',
+              { className: 'mb-4 text-center' },
+              'Login to your account'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'username' },
+                'Username'
+              ),
+              _react2.default.createElement('input', {
+                className: 'transparent border-left-0 border-top-0 border-right-0',
+                type: 'text',
+                placeholder: 'e.g. yoprogrammer',
+                required: true
+              })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'password' },
+                'Password'
+              ),
+              _react2.default.createElement('input', {
+                className: 'transparent border-left-0 border-top-0 border-right-0',
+                type: 'password',
+                placeholder: 'Your password',
+                required: true
+              })
+            ),
+            _react2.default.createElement(
+              'button',
+              {
+                type: 'submit',
+                className: 'btn btn-lg btn-block btn-outline-light mt-5'
+              },
+              'Login'
+            ),
+            _react2.default.createElement(
+              'small',
+              { className: 'form-text text-muted text-center mt-3' },
+              'Don\'t have an accont yet? ',
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/signup' },
+                'Signup here.'
+              )
+            )
+          )
+        )
+      )
+    )
   );
 };
 
 exports.default = {
-  component: App
+  component: LoginPage
 };
 
 /***/ }),
-/* 17 */
+/* 17 */,
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -447,7 +520,44 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterConfig = __webpack_require__(1);
+
+var _Header = __webpack_require__(19);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var App = function App(_ref) {
+  var route = _ref.route;
+  return _react2.default.createElement(
+    'div',
+    { className: 'background', id: 'app' },
+    _react2.default.createElement(_Header2.default, null),
+    (0, _reactRouterConfig.renderRoutes)(route.routes)
+  );
+};
+
+exports.default = {
+  component: App
+};
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -457,7 +567,7 @@ var Header = function Header() {
     null,
     _react2.default.createElement(
       'nav',
-      { className: 'navbar navbar-expand-lg navbar-dark bg-dark' },
+      { className: 'navbar navbar-expand-lg navbar-inverse bg-inverse' },
       _react2.default.createElement(
         'div',
         { className: 'container' },
@@ -492,48 +602,24 @@ var Header = function Header() {
           },
           _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
         ),
-        _react2.default.createElement('div', { className: 'collapse navbar-collapse', id: 'navbarSupportedContent' })
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'collapse navbar-collapse justify-content-end',
+            id: 'navbarSupportedContent'
+          },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/signup', className: 'btn btn-warning' },
+            'Sign Up'
+          )
+        )
       )
     )
   );
 };
 
 exports.default = Header;
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _redux = __webpack_require__(5);
-
-var _reduxThunk = __webpack_require__(19);
-
-var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
-
-var _reducers = __webpack_require__(20);
-
-var _reducers2 = _interopRequireDefault(_reducers);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function () {
-  var store = (0, _redux.createStore)(_reducers2.default, {}, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-
-  return store;
-};
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux-thunk");
 
 /***/ }),
 /* 20 */
@@ -546,9 +632,44 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _redux = __webpack_require__(5);
+var _redux = __webpack_require__(6);
 
-var _userReducer = __webpack_require__(21);
+var _reduxThunk = __webpack_require__(21);
+
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+var _reducers = __webpack_require__(22);
+
+var _reducers2 = _interopRequireDefault(_reducers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+  var store = (0, _redux.createStore)(_reducers2.default, {}, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+
+  return store;
+};
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-thunk");
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _redux = __webpack_require__(6);
+
+var _userReducer = __webpack_require__(23);
 
 var _userReducer2 = _interopRequireDefault(_userReducer);
 
@@ -559,7 +680,7 @@ exports.default = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -569,7 +690,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _actions = __webpack_require__(4);
+var _actions = __webpack_require__(5);
 
 exports.default = function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -581,6 +702,180 @@ exports.default = function () {
     default:
       return state;
   }
+};
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SignupPage = function SignupPage() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'container my-5' },
+    _react2.default.createElement(
+      'div',
+      { className: 'row' },
+      _react2.default.createElement(
+        'div',
+        { className: 'col-md-6 col-lg-5' },
+        _react2.default.createElement(
+          'div',
+          { className: 'signupContainer' },
+          _react2.default.createElement(
+            'form',
+            null,
+            _react2.default.createElement(
+              'h2',
+              { className: 'mb-4 text-center' },
+              'Create your free account'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'username' },
+                'Username'
+              ),
+              _react2.default.createElement('input', {
+                className: 'transparent border-left-0 border-top-0 border-right-0',
+                type: 'text',
+                placeholder: 'e.g. yoprogrammer',
+                required: true
+              })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'username' },
+                'First name'
+              ),
+              _react2.default.createElement('input', {
+                className: 'transparent border-left-0 border-top-0 border-right-0',
+                type: 'text',
+                placeholder: 'e.g. Yuttasak',
+                required: true
+              })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'username' },
+                'Last name'
+              ),
+              _react2.default.createElement('input', {
+                className: 'transparent border-left-0 border-top-0 border-right-0',
+                type: 'text',
+                placeholder: 'e.g. Pannawat',
+                required: true
+              })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'username' },
+                'Email'
+              ),
+              _react2.default.createElement('input', {
+                className: 'transparent border-left-0 border-top-0 border-right-0',
+                type: 'email',
+                placeholder: 'e.g. test@example.com',
+                required: true
+              })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'username' },
+                'Confirm email'
+              ),
+              _react2.default.createElement('input', {
+                className: 'transparent border-left-0 border-top-0 border-right-0',
+                type: 'email',
+                placeholder: 'e.g. test@example.com',
+                required: true
+              })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'username' },
+                'Password'
+              ),
+              _react2.default.createElement('input', {
+                className: 'transparent border-left-0 border-top-0 border-right-0',
+                type: 'password',
+                placeholder: 'Your password',
+                required: true
+              })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'password' },
+                'Confirm assword'
+              ),
+              _react2.default.createElement('input', {
+                className: 'transparent border-left-0 border-top-0 border-right-0',
+                type: 'password',
+                placeholder: 'Your password',
+                required: true
+              })
+            ),
+            _react2.default.createElement(
+              'button',
+              {
+                type: 'submit',
+                className: 'btn btn-lg btn-block btn-outline-light mt-5'
+              },
+              'Sign Up'
+            ),
+            _react2.default.createElement(
+              'small',
+              { className: 'form-text text-muted text-center mt-3' },
+              'Already have an account? ',
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/login' },
+                'Login here.'
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = {
+  component: SignupPage
 };
 
 /***/ })

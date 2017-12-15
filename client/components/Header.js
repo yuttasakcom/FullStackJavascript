@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => (
   <header>
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-inverse bg-inverse">
       <div className="container">
         <Link className="navbar-brand inline" to="/">
           <div className="d-flex">
@@ -25,7 +25,14 @@ const Header = () => (
           <span className="navbar-toggler-icon" />
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent" />
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <Link to="/signup" className="btn btn-warning">
+            Sign Up
+          </Link>
+        </div>
       </div>
     </nav>
   </header>

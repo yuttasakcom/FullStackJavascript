@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { renderRoutes } from 'react-router-config'
 
 import Header from './components/Header'
 
 const App = ({ route }) => (
-  <Fragment>
+  <div className="background" id="app">
     <Header />
     {renderRoutes(route.routes)}
-  </Fragment>
+  </div>
 )
 
 export default {

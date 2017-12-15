@@ -1,3 +1,10 @@
+// Base
 @import './base/setting';
 @import './base/base';
+
+// Pages
+@import './pages/login';
+@import './pages/signup';
+
+// Components
 @import './components/header';

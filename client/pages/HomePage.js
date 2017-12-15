@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { fetchUsers } from '../../client/actions'
 
 class HomePage extends Component {
   render() {
-    return <div className="container">Home Page</div>
+    return <Redirect to="/login" />
   }
 }
 
