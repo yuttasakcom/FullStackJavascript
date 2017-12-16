@@ -1,48 +1,56 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PlayingBar from '../components/PlayingBar'
+import Navbar from '../components/Navbar'
 
-const MainPage = () => (
-  <div className="mainContainer">
-    <div className="topContainer">
-      <div className="navBarContainer">
-        <div className="navBar d-flex flex-column">
-          <Link to="/" className="logo mb-3">
-            <img src="/statics/img/icons/logo.png" alt="Logo" />
-          </Link>
+class MainPage extends Component {
+  state = {
+    albums: [
+      { id: 1, name: 'A', image: 'clearday.jpg' },
+      { id: 2, name: 'B', image: 'energy.jpg' },
+      { id: 3, name: 'C', image: 'funkyelement.jpg' },
+      { id: 4, name: 'D', image: 'goinghigher.jpg' },
+      { id: 5, name: 'E', image: 'popdance.jpg' },
+      { id: 6, name: 'F', image: 'sweet.jpg' },
+      { id: 7, name: 'G', image: 'ukulele.jpg' }
+    ]
+  }
 
-          <div className="group">
-            <div className="navItem">
-              <Link to="/search">
-                Search
-                <img
-                  src="/statics/img/icons/search.png"
-                  className="icon"
-                  alt="Search"
-                />
-              </Link>
-            </div>
-          </div>
+  render() {
+    return (
+      <div className="mainContainer">
+        <div className="topContainer">
+          <Navbar />
 
-          <div className="group">
-            <div className="navItem">
-              <Link to="/browse">Browse</Link>
-            </div>
-
-            <div className="navItem">
-              <Link to="/your-music">Your Music</Link>
-            </div>
-
-            <div className="navItem">
-              <Link to="/profile">Reece Kenney</Link>
+          <div className="mainviewContainer">
+            <div className="mainContent">
+              <h1 className="pageHeadingBig text-center">
+                You Might Also Like
+              </h1>
+              <div className="gridViewContainer">
+                {this.state.albums.map(album => {
+                  return (
+                    <div className="gridViewItem" key={album.id}>
+                      <Link to={`/albums/${album.id}`}>
+                        <img
+                          src={`/statics/img/artwork/${album.image}`}
+                          alt={album.name}
+                        />
+                        <div className="gridViewInfo">{album.name}</div>
+                      </Link>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
+
+        <PlayingBar />
       </div>
-    </div>
-    <PlayingBar />
-  </div>
-)
+    )
+  }
+}
 
 export default {
   component: MainPage

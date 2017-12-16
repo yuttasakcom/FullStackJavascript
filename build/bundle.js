@@ -120,7 +120,7 @@ var _MainPage = __webpack_require__(19);
 
 var _MainPage2 = _interopRequireDefault(_MainPage);
 
-var _App = __webpack_require__(21);
+var _App = __webpack_require__(22);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -329,7 +329,7 @@ var _renderer = __webpack_require__(13);
 
 var _renderer2 = _interopRequireDefault(_renderer);
 
-var _createStore = __webpack_require__(22);
+var _createStore = __webpack_require__(23);
 
 var _createStore2 = _interopRequireDefault(_createStore);
 
@@ -870,6 +870,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -880,81 +882,91 @@ var _PlayingBar = __webpack_require__(20);
 
 var _PlayingBar2 = _interopRequireDefault(_PlayingBar);
 
+var _Navbar = __webpack_require__(21);
+
+var _Navbar2 = _interopRequireDefault(_Navbar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MainPage = function MainPage() {
-  return _react2.default.createElement(
-    'div',
-    { className: 'mainContainer' },
-    _react2.default.createElement(
-      'div',
-      { className: 'topContainer' },
-      _react2.default.createElement(
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MainPage = function (_Component) {
+  _inherits(MainPage, _Component);
+
+  function MainPage() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, MainPage);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MainPage.__proto__ || Object.getPrototypeOf(MainPage)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      albums: [{ id: 1, name: 'A', image: 'clearday.jpg' }, { id: 2, name: 'B', image: 'energy.jpg' }, { id: 3, name: 'C', image: 'funkyelement.jpg' }, { id: 4, name: 'D', image: 'goinghigher.jpg' }, { id: 5, name: 'E', image: 'popdance.jpg' }, { id: 6, name: 'F', image: 'sweet.jpg' }, { id: 7, name: 'G', image: 'ukulele.jpg' }]
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(MainPage, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
         'div',
-        { className: 'navBarContainer' },
+        { className: 'mainContainer' },
         _react2.default.createElement(
           'div',
-          { className: 'navBar d-flex flex-column' },
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/', className: 'logo mb-3' },
-            _react2.default.createElement('img', { src: '/statics/img/icons/logo.png', alt: 'Logo' })
-          ),
+          { className: 'topContainer' },
+          _react2.default.createElement(_Navbar2.default, null),
           _react2.default.createElement(
             'div',
-            { className: 'group' },
+            { className: 'mainviewContainer' },
             _react2.default.createElement(
               'div',
-              { className: 'navItem' },
+              { className: 'mainContent' },
               _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/search' },
-                'Search',
-                _react2.default.createElement('img', {
-                  src: '/statics/img/icons/search.png',
-                  className: 'icon',
-                  alt: 'Search'
+                'h1',
+                { className: 'pageHeadingBig text-center' },
+                'You Might Also Like'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'gridViewContainer' },
+                this.state.albums.map(function (album) {
+                  return _react2.default.createElement(
+                    'div',
+                    { className: 'gridViewItem', key: album.id },
+                    _react2.default.createElement(
+                      _reactRouterDom.Link,
+                      { to: '/albums/' + album.id },
+                      _react2.default.createElement('img', {
+                        src: '/statics/img/artwork/' + album.image,
+                        alt: album.name
+                      }),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'gridViewInfo' },
+                        album.name
+                      )
+                    )
+                  );
                 })
               )
             )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'group' },
-            _react2.default.createElement(
-              'div',
-              { className: 'navItem' },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/browse' },
-                'Browse'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'navItem' },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/your-music' },
-                'Your Music'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'navItem' },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/profile' },
-                'Reece Kenney'
-              )
-            )
           )
-        )
-      )
-    ),
-    _react2.default.createElement(_PlayingBar2.default, null)
-  );
-};
+        ),
+        _react2.default.createElement(_PlayingBar2.default, null)
+      );
+    }
+  }]);
+
+  return MainPage;
+}(_react.Component);
 
 exports.default = {
   component: MainPage
@@ -1131,6 +1143,92 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Navbar = function Navbar() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'navBarContainer' },
+    _react2.default.createElement(
+      'div',
+      { className: 'navBar d-flex flex-column' },
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: '/', className: 'logo mb-3' },
+        _react2.default.createElement('img', { src: '/statics/img/icons/logo.png', alt: 'Logo' })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'group' },
+        _react2.default.createElement(
+          'div',
+          { className: 'navItem' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/search' },
+            'Search',
+            _react2.default.createElement('img', {
+              src: '/statics/img/icons/search.png',
+              className: 'icon',
+              alt: 'Search'
+            })
+          )
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'group' },
+        _react2.default.createElement(
+          'div',
+          { className: 'navItem' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/browse' },
+            'Browse'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'navItem' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/your-music' },
+            'Your Music'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'navItem' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/profile' },
+            'Reece Kenney'
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = Navbar;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
 var _reactRouterConfig = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -1149,7 +1247,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1161,11 +1259,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(7);
 
-var _reduxThunk = __webpack_require__(23);
+var _reduxThunk = __webpack_require__(24);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _reducers = __webpack_require__(24);
+var _reducers = __webpack_require__(25);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -1178,13 +1276,13 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1196,7 +1294,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(7);
 
-var _userReducer = __webpack_require__(25);
+var _userReducer = __webpack_require__(26);
 
 var _userReducer2 = _interopRequireDefault(_userReducer);
 
@@ -1207,7 +1305,7 @@ exports.default = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
