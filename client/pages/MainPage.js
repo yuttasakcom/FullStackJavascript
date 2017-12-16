@@ -6,11 +6,38 @@ const MainPage = () => (
   <div className="mainContainer">
     <div className="topContainer">
       <div className="navBarContainer">
-        <nav className="navBar d-flex d-flex-column">
-          <Link to="/" className="logo">
+        <div className="navBar d-flex flex-column">
+          <Link to="/" className="logo mb-3">
             <img src="/statics/img/icons/logo.png" alt="Logo" />
           </Link>
-        </nav>
+
+          <div className="group">
+            <div className="navItem">
+              <Link to="/search">
+                Search
+                <img
+                  src="/statics/img/icons/search.png"
+                  className="icon"
+                  alt="Search"
+                />
+              </Link>
+            </div>
+          </div>
+
+          <div className="group">
+            <div className="navItem">
+              <Link to="/browse">Browse</Link>
+            </div>
+
+            <div className="navItem">
+              <Link to="/your-music">Your Music</Link>
+            </div>
+
+            <div className="navItem">
+              <Link to="/profile">Reece Kenney</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <PlayingBar />

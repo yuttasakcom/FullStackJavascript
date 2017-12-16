@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -104,11 +104,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HomePage = __webpack_require__(15);
+var _HomePage = __webpack_require__(16);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _LoginPage = __webpack_require__(16);
+var _LoginPage = __webpack_require__(17);
 
 var _LoginPage2 = _interopRequireDefault(_LoginPage);
 
@@ -161,12 +161,6 @@ var fetchUsers = exports.fetchUsers = function fetchUsers() {
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -176,17 +170,102 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-__webpack_require__(8);
+var _react = __webpack_require__(0);
 
-var _express = __webpack_require__(9);
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Header = function Header() {
+  return _react2.default.createElement(
+    'header',
+    null,
+    _react2.default.createElement(
+      'nav',
+      { className: 'navbar navbar-expand-lg navbar-inverse bg-inverse' },
+      _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { className: 'navbar-brand inline', to: '/' },
+          _react2.default.createElement(
+            'div',
+            { className: 'd-flex' },
+            _react2.default.createElement(
+              'div',
+              { className: 'bg-warning px-2 text-dark rounded-left' },
+              'JS'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'bg-light px-2 text-dark rounded-right' },
+              'Full Stack'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'button',
+          {
+            className: 'navbar-toggler',
+            type: 'button',
+            'data-toggle': 'collapse',
+            'data-target': '#navbarSupportedContent',
+            'aria-controls': 'navbarSupportedContent',
+            'aria-expanded': 'false',
+            'aria-label': 'Toggle navigation'
+          },
+          _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
+        ),
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'collapse navbar-collapse justify-content-end',
+            id: 'navbarSupportedContent'
+          },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/signup', className: 'btn btn-warning' },
+            'Sign Up'
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = Header;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+__webpack_require__(9);
+
+var _express = __webpack_require__(10);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _dotenv = __webpack_require__(10);
+var _dotenv = __webpack_require__(11);
 
 var _dotenv2 = _interopRequireDefault(_dotenv);
 
-var _routes = __webpack_require__(11);
+var _routes = __webpack_require__(12);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -218,25 +297,25 @@ app.listen(app.get('port'), app.get('host'), function () {
 exports.default = app;
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-polyfill");
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = require("dotenv");
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -246,7 +325,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _renderer = __webpack_require__(12);
+var _renderer = __webpack_require__(13);
 
 var _renderer2 = _interopRequireDefault(_renderer);
 
@@ -285,7 +364,7 @@ var router = function router(app) {
 exports.default = router;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -299,7 +378,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(13);
+var _server = __webpack_require__(14);
 
 var _reactRouterDom = __webpack_require__(1);
 
@@ -307,7 +386,7 @@ var _reactRedux = __webpack_require__(3);
 
 var _reactRouterConfig = __webpack_require__(2);
 
-var _serializeJavascript = __webpack_require__(14);
+var _serializeJavascript = __webpack_require__(15);
 
 var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
 
@@ -336,19 +415,19 @@ exports.default = function (req, store) {
 };
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = require("serialize-javascript");
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -412,7 +491,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -430,7 +509,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _Header = __webpack_require__(17);
+var _Header = __webpack_require__(6);
 
 var _Header2 = _interopRequireDefault(_Header);
 
@@ -594,85 +673,6 @@ exports.default = {
 };
 
 /***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Header = function Header() {
-  return _react2.default.createElement(
-    'header',
-    null,
-    _react2.default.createElement(
-      'nav',
-      { className: 'navbar navbar-expand-lg navbar-inverse bg-inverse' },
-      _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { className: 'navbar-brand inline', to: '/' },
-          _react2.default.createElement(
-            'div',
-            { className: 'd-flex' },
-            _react2.default.createElement(
-              'div',
-              { className: 'bg-warning px-2 text-dark rounded-left' },
-              'JS'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'bg-light px-2 text-dark rounded-right' },
-              'Full Stack'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'button',
-          {
-            className: 'navbar-toggler',
-            type: 'button',
-            'data-toggle': 'collapse',
-            'data-target': '#navbarSupportedContent',
-            'aria-controls': 'navbarSupportedContent',
-            'aria-expanded': 'false',
-            'aria-label': 'Toggle navigation'
-          },
-          _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
-        ),
-        _react2.default.createElement(
-          'div',
-          {
-            className: 'collapse navbar-collapse justify-content-end',
-            id: 'navbarSupportedContent'
-          },
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/signup', className: 'btn btn-warning' },
-            'Sign Up'
-          )
-        )
-      )
-    )
-  );
-};
-
-exports.default = Header;
-
-/***/ }),
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -689,7 +689,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _Header = __webpack_require__(17);
+var _Header = __webpack_require__(6);
 
 var _Header2 = _interopRequireDefault(_Header);
 
@@ -893,12 +893,61 @@ var MainPage = function MainPage() {
         'div',
         { className: 'navBarContainer' },
         _react2.default.createElement(
-          'nav',
-          { className: 'navBar d-flex d-flex-column' },
+          'div',
+          { className: 'navBar d-flex flex-column' },
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/', className: 'logo' },
+            { to: '/', className: 'logo mb-3' },
             _react2.default.createElement('img', { src: '/statics/img/icons/logo.png', alt: 'Logo' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'group' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navItem' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/search' },
+                'Search',
+                _react2.default.createElement('img', {
+                  src: '/statics/img/icons/search.png',
+                  className: 'icon',
+                  alt: 'Search'
+                })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'group' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navItem' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/browse' },
+                'Browse'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'navItem' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/your-music' },
+                'Your Music'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'navItem' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/profile' },
+                'Reece Kenney'
+              )
+            )
           )
         )
       )
@@ -976,7 +1025,7 @@ var PlayingBar = function PlayingBar() {
       ),
       _react2.default.createElement(
         "div",
-        { className: "playing-center d-flex d-flex-column align-items-center" },
+        { className: "playing-center d-flex flex-column align-items-center" },
         _react2.default.createElement(
           "div",
           { className: "content playerControls" },
@@ -1110,7 +1159,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _redux = __webpack_require__(6);
+var _redux = __webpack_require__(7);
 
 var _reduxThunk = __webpack_require__(23);
 
@@ -1145,7 +1194,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _redux = __webpack_require__(6);
+var _redux = __webpack_require__(7);
 
 var _userReducer = __webpack_require__(25);
 

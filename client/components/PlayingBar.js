@@ -24,7 +24,7 @@ const PlayingBar = () => (
           </div>
         </div>
       </div>
-      <div className="playing-center d-flex d-flex-column align-items-center">
+      <div className="playing-center d-flex flex-column align-items-center">
         <div className="content playerControls">
           <div className="buttons">
             <button className="controlButton shuffle" title="Shuffle button">
