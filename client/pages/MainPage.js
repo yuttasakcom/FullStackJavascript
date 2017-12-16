@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import PlayingBar from '../components/PlayingBar'
-import Navbar from '../components/Navbar'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 class MainPage extends Component {
   state = {
@@ -18,36 +18,37 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div className="mainContainer">
-        <div className="topContainer">
-          <Navbar />
-
-          <div className="mainviewContainer">
-            <div className="mainContent">
-              <h1 className="pageHeadingBig text-center">
-                You Might Also Like
-              </h1>
-              <div className="gridViewContainer">
-                {this.state.albums.map(album => {
-                  return (
-                    <div className="gridViewItem" key={album.id}>
-                      <Link to={`/albums/${album.id}`}>
-                        <img
-                          src={`/statics/img/artwork/${album.image}`}
-                          alt={album.name}
-                        />
-                        <div className="gridViewInfo">{album.name}</div>
-                      </Link>
-                    </div>
-                  )
-                })}
+      <Fragment>
+        <Header />
+        <div className="mainContainer">
+          <div className="topContainer">
+            <div className="mainviewContainer">
+              <div className="mainContent">
+                <h1 className="pageHeadingBig text-center">
+                  You Might Also Like
+                </h1>
+                <div className="gridViewContainer">
+                  {this.state.albums.map(album => {
+                    return (
+                      <div className="gridViewItem" key={album.id}>
+                        <Link to={`/albums/${album.id}`}>
+                          <img
+                            src={`/statics/img/artwork/${album.image}`}
+                            alt={album.name}
+                          />
+                          <div className="gridViewInfo">{album.name}</div>
+                        </Link>
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <PlayingBar />
-      </div>
+        <Footer />
+      </Fragment>
     )
   }
 }

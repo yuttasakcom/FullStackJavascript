@@ -120,7 +120,11 @@ var _MainPage = __webpack_require__(19);
 
 var _MainPage2 = _interopRequireDefault(_MainPage);
 
-var _App = __webpack_require__(22);
+var _AlbumInfoPage = __webpack_require__(22);
+
+var _AlbumInfoPage2 = _interopRequireDefault(_AlbumInfoPage);
+
+var _App = __webpack_require__(23);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -133,6 +137,8 @@ exports.default = [_extends({}, _App2.default, {
     path: '/signup'
   }), _extends({}, _MainPage2.default, {
     path: '/playing'
+  }), _extends({}, _AlbumInfoPage2.default, {
+    path: '/albums/:id'
   }), _extends({}, _HomePage2.default, {
     path: '/'
   })]
@@ -174,66 +180,14 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(1);
+var _Navbar = __webpack_require__(21);
+
+var _Navbar2 = _interopRequireDefault(_Navbar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header() {
-  return _react2.default.createElement(
-    'header',
-    null,
-    _react2.default.createElement(
-      'nav',
-      { className: 'navbar navbar-expand-lg navbar-inverse bg-inverse' },
-      _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { className: 'navbar-brand inline', to: '/' },
-          _react2.default.createElement(
-            'div',
-            { className: 'd-flex' },
-            _react2.default.createElement(
-              'div',
-              { className: 'bg-warning px-2 text-dark rounded-left' },
-              'JS'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'bg-light px-2 text-dark rounded-right' },
-              'Full Stack'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'button',
-          {
-            className: 'navbar-toggler',
-            type: 'button',
-            'data-toggle': 'collapse',
-            'data-target': '#navbarSupportedContent',
-            'aria-controls': 'navbarSupportedContent',
-            'aria-expanded': 'false',
-            'aria-label': 'Toggle navigation'
-          },
-          _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
-        ),
-        _react2.default.createElement(
-          'div',
-          {
-            className: 'collapse navbar-collapse justify-content-end',
-            id: 'navbarSupportedContent'
-          },
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/signup', className: 'btn btn-warning' },
-            'Sign Up'
-          )
-        )
-      )
-    )
-  );
+  return _react2.default.createElement(_Navbar2.default, null);
 };
 
 exports.default = Header;
@@ -329,7 +283,7 @@ var _renderer = __webpack_require__(13);
 
 var _renderer2 = _interopRequireDefault(_renderer);
 
-var _createStore = __webpack_require__(23);
+var _createStore = __webpack_require__(24);
 
 var _createStore2 = _interopRequireDefault(_createStore);
 
@@ -509,10 +463,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _Header = __webpack_require__(6);
-
-var _Header2 = _interopRequireDefault(_Header);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -544,117 +494,112 @@ var LoginPage = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        _react.Fragment,
-        null,
-        _react2.default.createElement(_Header2.default, null),
+        'div',
+        { className: 'background', id: 'background' },
         _react2.default.createElement(
           'div',
-          { className: 'background', id: 'background' },
+          { className: 'container' },
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'row' },
+              { className: 'col-md-6 col-lg-4 mt-sm-10 mt-md-20' },
               _react2.default.createElement(
                 'div',
-                { className: 'col-md-6 col-lg-4 mt-sm-10 mt-md-20' },
+                { className: 'loginContainer' },
                 _react2.default.createElement(
-                  'div',
-                  { className: 'loginContainer' },
+                  'form',
+                  null,
                   _react2.default.createElement(
-                    'form',
+                    'h2',
+                    { className: 'mb-4 text-center' },
+                    'Login to your account'
+                  ),
+                  _react2.default.createElement(
+                    'p',
                     null,
                     _react2.default.createElement(
-                      'h2',
-                      { className: 'mb-4 text-center' },
-                      'Login to your account'
+                      'label',
+                      { htmlFor: 'username' },
+                      'Username'
                     ),
+                    _react2.default.createElement('input', {
+                      className: 'transparent border-left-0 border-top-0 border-right-0',
+                      type: 'text',
+                      placeholder: 'e.g. yoprogrammer'
+                    })
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
                     _react2.default.createElement(
-                      'p',
-                      null,
-                      _react2.default.createElement(
-                        'label',
-                        { htmlFor: 'username' },
-                        'Username'
-                      ),
-                      _react2.default.createElement('input', {
-                        className: 'transparent border-left-0 border-top-0 border-right-0',
-                        type: 'text',
-                        placeholder: 'e.g. yoprogrammer'
-                      })
+                      'label',
+                      { htmlFor: 'password' },
+                      'Password'
                     ),
+                    _react2.default.createElement('input', {
+                      className: 'transparent border-left-0 border-top-0 border-right-0',
+                      type: 'password',
+                      placeholder: 'Your password'
+                    })
+                  ),
+                  _react2.default.createElement(
+                    'button',
+                    {
+                      type: 'button',
+                      onClick: this.handleClick,
+                      className: 'btn btn-lg btn-block btn-outline-light mt-5'
+                    },
+                    'Login'
+                  ),
+                  _react2.default.createElement(
+                    'small',
+                    { className: 'form-text text-muted text-center mt-3' },
+                    'Don\'t have an accont yet?',
+                    ' ',
                     _react2.default.createElement(
-                      'p',
-                      null,
-                      _react2.default.createElement(
-                        'label',
-                        { htmlFor: 'password' },
-                        'Password'
-                      ),
-                      _react2.default.createElement('input', {
-                        className: 'transparent border-left-0 border-top-0 border-right-0',
-                        type: 'password',
-                        placeholder: 'Your password'
-                      })
-                    ),
-                    _react2.default.createElement(
-                      'button',
-                      {
-                        type: 'button',
-                        onClick: this.handleClick,
-                        className: 'btn btn-lg btn-block btn-outline-light mt-5'
-                      },
-                      'Login'
-                    ),
-                    _react2.default.createElement(
-                      'small',
-                      { className: 'form-text text-muted text-center mt-3' },
-                      'Don\'t have an accont yet?',
-                      ' ',
-                      _react2.default.createElement(
-                        _reactRouterDom.Link,
-                        { to: '/signup' },
-                        'Signup here.'
-                      )
+                      _reactRouterDom.Link,
+                      { to: '/signup' },
+                      'Signup here.'
                     )
                   )
                 )
-              ),
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-6 col-lg-8 mt-5 mt-md-10 mt-lg-15 pl-lg-10' },
               _react2.default.createElement(
                 'div',
-                { className: 'col-md-6 col-lg-8 mt-5 mt-md-10 mt-lg-15 pl-lg-10' },
+                { className: 'loginText' },
                 _react2.default.createElement(
-                  'div',
-                  { className: 'loginText' },
+                  'h1',
+                  null,
+                  'Get great music, right now'
+                ),
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  'Listen to loads of songs for free'
+                ),
+                _react2.default.createElement(
+                  'ul',
+                  null,
                   _react2.default.createElement(
-                    'h1',
+                    'li',
                     null,
-                    'Get great music, right now'
+                    'Discover music you\'ll fall in love with'
                   ),
                   _react2.default.createElement(
-                    'h2',
+                    'li',
                     null,
-                    'Listen to loads of songs for free'
+                    'Create your own playlists'
                   ),
                   _react2.default.createElement(
-                    'ul',
+                    'li',
                     null,
-                    _react2.default.createElement(
-                      'li',
-                      null,
-                      'Discover music you\'ll fall in love with'
-                    ),
-                    _react2.default.createElement(
-                      'li',
-                      null,
-                      'Create your own playlists'
-                    ),
-                    _react2.default.createElement(
-                      'li',
-                      null,
-                      'Follow artists to keep to date'
-                    )
+                    'Follow artists to keep to date'
                   )
                 )
               )
@@ -689,162 +634,153 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _Header = __webpack_require__(6);
-
-var _Header2 = _interopRequireDefault(_Header);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SignupPage = function SignupPage() {
   return _react2.default.createElement(
-    _react.Fragment,
-    null,
-    _react2.default.createElement(_Header2.default, null),
+    'div',
+    { className: 'background', id: 'background' },
     _react2.default.createElement(
       'div',
-      { className: 'background', id: 'background' },
+      { className: 'container mt-10 mb-5 mb-sm-1' },
       _react2.default.createElement(
         'div',
-        { className: 'container mt-10 mb-5 mb-sm-1' },
+        { className: 'row' },
         _react2.default.createElement(
           'div',
-          { className: 'row' },
+          { className: 'col-md-6 col-lg-5' },
           _react2.default.createElement(
             'div',
-            { className: 'col-md-6 col-lg-5' },
+            { className: 'signupContainer' },
             _react2.default.createElement(
-              'div',
-              { className: 'signupContainer' },
+              'form',
+              null,
               _react2.default.createElement(
-                'form',
+                'h2',
+                { className: 'mb-4 text-center' },
+                'Create your free account'
+              ),
+              _react2.default.createElement(
+                'p',
                 null,
                 _react2.default.createElement(
-                  'h2',
-                  { className: 'mb-4 text-center' },
-                  'Create your free account'
+                  'label',
+                  { htmlFor: 'username' },
+                  'Username'
                 ),
+                _react2.default.createElement('input', {
+                  className: 'transparent border-left-0 border-top-0 border-right-0',
+                  type: 'text',
+                  placeholder: 'e.g. yoprogrammer',
+                  required: true
+                })
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
                 _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement(
-                    'label',
-                    { htmlFor: 'username' },
-                    'Username'
-                  ),
-                  _react2.default.createElement('input', {
-                    className: 'transparent border-left-0 border-top-0 border-right-0',
-                    type: 'text',
-                    placeholder: 'e.g. yoprogrammer',
-                    required: true
-                  })
+                  'label',
+                  { htmlFor: 'username' },
+                  'First name'
                 ),
+                _react2.default.createElement('input', {
+                  className: 'transparent border-left-0 border-top-0 border-right-0',
+                  type: 'text',
+                  placeholder: 'e.g. Yuttasak',
+                  required: true
+                })
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
                 _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement(
-                    'label',
-                    { htmlFor: 'username' },
-                    'First name'
-                  ),
-                  _react2.default.createElement('input', {
-                    className: 'transparent border-left-0 border-top-0 border-right-0',
-                    type: 'text',
-                    placeholder: 'e.g. Yuttasak',
-                    required: true
-                  })
+                  'label',
+                  { htmlFor: 'username' },
+                  'Last name'
                 ),
+                _react2.default.createElement('input', {
+                  className: 'transparent border-left-0 border-top-0 border-right-0',
+                  type: 'text',
+                  placeholder: 'e.g. Pannawat',
+                  required: true
+                })
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
                 _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement(
-                    'label',
-                    { htmlFor: 'username' },
-                    'Last name'
-                  ),
-                  _react2.default.createElement('input', {
-                    className: 'transparent border-left-0 border-top-0 border-right-0',
-                    type: 'text',
-                    placeholder: 'e.g. Pannawat',
-                    required: true
-                  })
+                  'label',
+                  { htmlFor: 'username' },
+                  'Email'
                 ),
+                _react2.default.createElement('input', {
+                  className: 'transparent border-left-0 border-top-0 border-right-0',
+                  type: 'email',
+                  placeholder: 'e.g. test@example.com',
+                  required: true
+                })
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
                 _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement(
-                    'label',
-                    { htmlFor: 'username' },
-                    'Email'
-                  ),
-                  _react2.default.createElement('input', {
-                    className: 'transparent border-left-0 border-top-0 border-right-0',
-                    type: 'email',
-                    placeholder: 'e.g. test@example.com',
-                    required: true
-                  })
+                  'label',
+                  { htmlFor: 'username' },
+                  'Confirm email'
                 ),
+                _react2.default.createElement('input', {
+                  className: 'transparent border-left-0 border-top-0 border-right-0',
+                  type: 'email',
+                  placeholder: 'e.g. test@example.com',
+                  required: true
+                })
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
                 _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement(
-                    'label',
-                    { htmlFor: 'username' },
-                    'Confirm email'
-                  ),
-                  _react2.default.createElement('input', {
-                    className: 'transparent border-left-0 border-top-0 border-right-0',
-                    type: 'email',
-                    placeholder: 'e.g. test@example.com',
-                    required: true
-                  })
+                  'label',
+                  { htmlFor: 'username' },
+                  'Password'
                 ),
+                _react2.default.createElement('input', {
+                  className: 'transparent border-left-0 border-top-0 border-right-0',
+                  type: 'password',
+                  placeholder: 'Your password',
+                  required: true
+                })
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
                 _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement(
-                    'label',
-                    { htmlFor: 'username' },
-                    'Password'
-                  ),
-                  _react2.default.createElement('input', {
-                    className: 'transparent border-left-0 border-top-0 border-right-0',
-                    type: 'password',
-                    placeholder: 'Your password',
-                    required: true
-                  })
+                  'label',
+                  { htmlFor: 'password' },
+                  'Confirm assword'
                 ),
+                _react2.default.createElement('input', {
+                  className: 'transparent border-left-0 border-top-0 border-right-0',
+                  type: 'password',
+                  placeholder: 'Your password',
+                  required: true
+                })
+              ),
+              _react2.default.createElement(
+                'button',
+                {
+                  type: 'submit',
+                  className: 'btn btn-lg btn-block btn-outline-light mt-5'
+                },
+                'Sign Up'
+              ),
+              _react2.default.createElement(
+                'small',
+                { className: 'form-text text-muted text-center mt-3' },
+                'Already have an account? ',
                 _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement(
-                    'label',
-                    { htmlFor: 'password' },
-                    'Confirm assword'
-                  ),
-                  _react2.default.createElement('input', {
-                    className: 'transparent border-left-0 border-top-0 border-right-0',
-                    type: 'password',
-                    placeholder: 'Your password',
-                    required: true
-                  })
-                ),
-                _react2.default.createElement(
-                  'button',
-                  {
-                    type: 'submit',
-                    className: 'btn btn-lg btn-block btn-outline-light mt-5'
-                  },
-                  'Sign Up'
-                ),
-                _react2.default.createElement(
-                  'small',
-                  { className: 'form-text text-muted text-center mt-3' },
-                  'Already have an account? ',
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: '/login' },
-                    'Login here.'
-                  )
+                  _reactRouterDom.Link,
+                  { to: '/login' },
+                  'Login here.'
                 )
               )
             )
@@ -878,13 +814,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _PlayingBar = __webpack_require__(20);
+var _Header = __webpack_require__(6);
 
-var _PlayingBar2 = _interopRequireDefault(_PlayingBar);
+var _Header2 = _interopRequireDefault(_Header);
 
-var _Navbar = __webpack_require__(21);
+var _Footer = __webpack_require__(28);
 
-var _Navbar2 = _interopRequireDefault(_Navbar);
+var _Footer2 = _interopRequireDefault(_Footer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -917,50 +853,54 @@ var MainPage = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        { className: 'mainContainer' },
+        _react.Fragment,
+        null,
+        _react2.default.createElement(_Header2.default, null),
         _react2.default.createElement(
           'div',
-          { className: 'topContainer' },
-          _react2.default.createElement(_Navbar2.default, null),
+          { className: 'mainContainer' },
           _react2.default.createElement(
             'div',
-            { className: 'mainviewContainer' },
+            { className: 'topContainer' },
             _react2.default.createElement(
               'div',
-              { className: 'mainContent' },
-              _react2.default.createElement(
-                'h1',
-                { className: 'pageHeadingBig text-center' },
-                'You Might Also Like'
-              ),
+              { className: 'mainviewContainer' },
               _react2.default.createElement(
                 'div',
-                { className: 'gridViewContainer' },
-                this.state.albums.map(function (album) {
-                  return _react2.default.createElement(
-                    'div',
-                    { className: 'gridViewItem', key: album.id },
-                    _react2.default.createElement(
-                      _reactRouterDom.Link,
-                      { to: '/albums/' + album.id },
-                      _react2.default.createElement('img', {
-                        src: '/statics/img/artwork/' + album.image,
-                        alt: album.name
-                      }),
+                { className: 'mainContent' },
+                _react2.default.createElement(
+                  'h1',
+                  { className: 'pageHeadingBig text-center' },
+                  'You Might Also Like'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'gridViewContainer' },
+                  this.state.albums.map(function (album) {
+                    return _react2.default.createElement(
+                      'div',
+                      { className: 'gridViewItem', key: album.id },
                       _react2.default.createElement(
-                        'div',
-                        { className: 'gridViewInfo' },
-                        album.name
+                        _reactRouterDom.Link,
+                        { to: '/albums/' + album.id },
+                        _react2.default.createElement('img', {
+                          src: '/statics/img/artwork/' + album.image,
+                          alt: album.name
+                        }),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'gridViewInfo' },
+                          album.name
+                        )
                       )
-                    )
-                  );
-                })
+                    );
+                  })
+                )
               )
             )
           )
         ),
-        _react2.default.createElement(_PlayingBar2.default, null)
+        _react2.default.createElement(_Footer2.default, null)
       );
     }
   }]);
@@ -1229,6 +1169,45 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Header = __webpack_require__(6);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Footer = __webpack_require__(28);
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AlbumInfoPage = function AlbumInfoPage(_ref) {
+  var match = _ref.match;
+  return _react2.default.createElement(
+    _react.Fragment,
+    null,
+    _react2.default.createElement(_Header2.default, null),
+    _react2.default.createElement(_Footer2.default, null)
+  );
+};
+
+exports.default = {
+  component: AlbumInfoPage
+};
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
 var _reactRouterConfig = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -1247,7 +1226,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1259,11 +1238,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(7);
 
-var _reduxThunk = __webpack_require__(24);
+var _reduxThunk = __webpack_require__(25);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _reducers = __webpack_require__(25);
+var _reducers = __webpack_require__(26);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -1276,13 +1255,13 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1294,7 +1273,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(7);
 
-var _userReducer = __webpack_require__(26);
+var _userReducer = __webpack_require__(27);
 
 var _userReducer2 = _interopRequireDefault(_userReducer);
 
@@ -1305,7 +1284,7 @@ exports.default = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1328,6 +1307,33 @@ exports.default = function () {
       return state;
   }
 };
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _PlayingBar = __webpack_require__(20);
+
+var _PlayingBar2 = _interopRequireDefault(_PlayingBar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Footer = function Footer() {
+  return _react2.default.createElement(_PlayingBar2.default, null);
+};
+
+exports.default = Footer;
 
 /***/ })
 /******/ ]);

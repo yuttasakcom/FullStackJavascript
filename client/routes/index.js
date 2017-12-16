@@ -3,6 +3,7 @@ import HomePage from '../pages/HomePage'
 import LoginPage from '../pages/LoginPage'
 import SignupPage from '../pages/SignupPage'
 import MainPage from '../pages/MainPage'
+import AlbumInfoPage from '../pages/AlbumInfoPage'
 import App from '../App'
 
 export default [
@@ -20,6 +21,10 @@ export default [
       {
         ...MainPage,
         path: '/playing'
+      },
+      {
+        ...AlbumInfoPage,
+        path: '/albums/:id'
       },
       {
         ...HomePage,
